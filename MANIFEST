@@ -8,11 +8,8 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/MooseX/Throwable.pm
 lib/MooseX/Throwable/Exception.pm
-lib/MooseX/Throwable/Role/Meta/ThrowError.pm
-lib/MooseX/Throwable/Role/ThrowError.pm
 Makefile.PL
 MANIFEST			This list of files
-META.yml
 t/00-require.t
 t/01-bang.t
 t/02-author.t

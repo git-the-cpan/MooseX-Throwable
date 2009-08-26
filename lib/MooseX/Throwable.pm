@@ -5,12 +5,8 @@ require 5.008006;
 
 use Moose ();
 use Moose::Exporter;
-use Moose::Util::MetaRole;
-use MooseX::Throwable::Role::Meta::ThrowError;
-use MooseX::Throwable::Role::ThrowError;
-use MooseX::Throwable::Exception;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -62,14 +58,7 @@ sub init_meta
     Moose->init_meta(%p);
 
     my $caller = $p{for_class};
-
-    Moose::Util::MetaRole::apply_metaclass_roles
-        ( for_class => $caller,
-          metaclass_roles =>
-          ['MooseX::Throwable::Role::Meta::ThrowError'],
-          constructor_class_roles =>
-          ['MooseX::Throwable::Role::ThrowError'],
-        );
+    $caller->meta->error_class('MooseX::Throwable::Exception');
 
     return $caller->meta();
 }

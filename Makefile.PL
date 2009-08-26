@@ -10,6 +10,8 @@ requires 'Moose' => undef;
 requires 'MooseX::Types' => undef;
 requires 'Throwable' => undef;
 
+resources repository => 'http://github.com/chrisa/MooseX-Throwable/tree/master';
+
 my @force_build_requires_if_author = qw(
   Test::NoTabs
   Test::Pod
